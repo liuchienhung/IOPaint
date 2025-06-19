@@ -64,7 +64,6 @@ export enum PluginName {
   GFPGAN = "GFPGAN",
   RestoreFormer = "RestoreFormer",
   InteractiveSeg = "InteractiveSeg",
-  GIF = "GIF",
 }
 
 export interface PluginParams {
