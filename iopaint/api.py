@@ -202,6 +202,22 @@ class Api:
         with open(output_path, "wb") as fw:
             fw.write(origin_image_bytes)
 
+        if self.config.enable_gif:
+            try:
+                from iopaint.plugins.make_gif import make_gif
+
+                if self.config.input:
+                    if self.config.input.is_file():
+                        orig_path = self.config.input
+                    else:
+                        orig_path = self.config.input / safe_filename
+
+                    if orig_path.exists():
+                        gif_path = output_path.with_suffix(".gif")
+                        make_gif(orig_path, output_path, gif_path)
+            except Exception as e:  # pragma: no cover - best effort
+                logger.error(f"Make GIF failed: {e}")
+
     def api_current_model(self) -> ModelInfo:
         return self.model_manager.current_model
 

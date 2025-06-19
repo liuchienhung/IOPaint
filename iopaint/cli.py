@@ -141,6 +141,7 @@ def start(
     realesrgan_model: RealESRGANModel = Option(RealESRGANModel.realesr_general_x4v3),
     enable_gfpgan: bool = Option(False),
     gfpgan_device: Device = Option(Device.cpu),
+    enable_gif: bool = Option(False, help=GIF_HELP),
     enable_restoreformer: bool = Option(False),
     restoreformer_device: Device = Option(Device.cpu),
 ):
@@ -222,6 +223,7 @@ def start(
         realesrgan_model=realesrgan_model,
         enable_gfpgan=enable_gfpgan,
         gfpgan_device=gfpgan_device,
+        enable_gif=enable_gif,
         enable_restoreformer=enable_restoreformer,
         restoreformer_device=restoreformer_device,
     )
