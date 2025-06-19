@@ -25,6 +25,7 @@ export enum PluginName {
   GFPGAN = "GFPGAN",
   RestoreFormer = "RestoreFormer",
   InteractiveSeg = "InteractiveSeg",
+  GIF = "GIF",
 }
 
 // TODO: get plugin config from server and using form-render??
@@ -52,6 +53,10 @@ const pluginMap = {
   [PluginName.InteractiveSeg]: {
     IconClass: MousePointerClick,
     showName: "Interactive Segmentation",
+  },
+  [PluginName.GIF]: {
+    IconClass: Blocks,
+    showName: "Make GIF",
   },
 }
 

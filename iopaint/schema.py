@@ -278,6 +278,7 @@ class ApiConfig(BaseModel):
     realesrgan_model: RealESRGANModel
     enable_gfpgan: bool
     gfpgan_device: Device
+    enable_gif: bool
     enable_restoreformer: bool
     restoreformer_device: Device
 
